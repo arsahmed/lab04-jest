@@ -14,19 +14,20 @@ function invertCase(text) {
   const LOWER_CASE = "abedefghijklmnoqprstuvwxyz";
   const UPPER_CASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+
+
   let tempString = '';
   for(let i=0; i<text.length; i++){
     let char = text[i];
-    if(LOWER_CASE.indexOf(char) != -1){ //is lowercase
-      let upper = UPPER_CASE[ LOWER_CASE.indexOf(char) ];
-      tempString += upper;
+    if(char == char.toUpperCase()){ //is lowercase
+      char = char.toLowerCase();
     }
     else { //is uppercase
-      let lower = LOWER_CASE [ LOWER_CASE.indexOf(char) ];
-      tempString += lower;
+      char = char.toUpperCase();
     }
+    tempString+=char;
   }
-  return text;
+  return tempString;
 }
 
 
